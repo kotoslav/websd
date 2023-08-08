@@ -42,7 +42,7 @@ app.get('/api/callback', (req, res) => {
 })
 */
 
-app.post('/api/callback', async (req, res) => {
+async function telegram (req) {
     let message = [];
     for (key in req.body) {
         message.push(`${key} - ${req.body[key]}\n`);
@@ -52,8 +52,13 @@ app.post('/api/callback', async (req, res) => {
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", encodeURI(url+message), true);
     xhttp.send();
-    return res.status(200).send({message: "Мы перезвоним вам в ближайшее время!"});
+    }
+
+app.post('/api/callback', async (req, res) => {
+    telegram(req);
+    return res.status(200).send({message: "We will call you"});
 });
+
 
 app.listen(port, '127.0.0.1');
 console.log('Server started at http://localhost:' + port);
