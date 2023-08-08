@@ -34,19 +34,14 @@ export class CallbackForm extends HTMLElement {
         ...callbackForm.callorder
     };
     const order = JSON.stringify(form);
-    await fetch('/api/callback', {
+    fetch('/api/callback', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
       body: order
-      }).then(
-        response => response.json()
-      ).then(
-        result => {
-          document.dispatchEvent(new CustomEvent("modalclose"));
-          console.log(`${result.message}`)
-
+      });
+      document.dispatchEvent(new CustomEvent("modalclose"));
       });
     }
 }
