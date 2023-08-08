@@ -42,6 +42,5 @@ export class CallbackForm extends HTMLElement {
       body: order
       });
       document.dispatchEvent(new CustomEvent("modalclose"));
-      });
     }
 }
