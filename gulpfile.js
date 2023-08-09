@@ -1,7 +1,7 @@
 let gulp     = require('gulp'),
 sass         = require('gulp-sass'),
 prefixer = require('gulp-autoprefixer'),
-cssmin     = require('gulp-clean-css'),
+cssmin     = require('gulp-cssmin'),
 uglify       = require('gulp-uglify'),
 fileinclude = require('gulp-file-include'),
 gcmq = require('gulp-group-css-media-queries');
@@ -15,9 +15,7 @@ gulp.task('html_build', function (done) {
 });
 
 gulp.task('css_build', function (done) {
-    return gulp.src('src/assets/*.css')
-        .pipe(prefixer())
-        .pipe(gcmq())
+    return gulp.src('src/css/*.css')
         .pipe(cssmin())
         .pipe(gulp.dest('frontend/css/'));
     done();
