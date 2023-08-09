@@ -1,5 +1,4 @@
-export class ModalWindow extends HTMLElement {
-  template = `<div class="modal_window" style="
+class ModalWindow extends HTMLElement{template=`<div class="modal_window" style="
       width: 100%;
       height: 100%;
       position: fixed;
@@ -27,40 +26,4 @@ export class ModalWindow extends HTMLElement {
 	</div>
 	</div>
 	</div>
-	`;
-
-  constructor() {
-    super();
-    this.form = document.createElement('div');
-    this.form.innerHTML = this.template;
-	this.style.display="none";
-    this.appendChild(this.form);
-	document.addEventListener("modalopen",(function(){
-      this.style.display="block";
-    }).bind(this));
-	document.addEventListener("modalclose",(function(){
-      this.style.display="none";
-    }).bind(this));
-    this.querySelector(".modalClose").addEventListener("click", function(){
-      document.dispatchEvent(new CustomEvent("modalclose"));
-    });
-    this.querySelector(".modal_window").addEventListener("click", function(event){
-      if (!event.composedPath().includes(this.querySelector('.scroll'))) {
-        document.dispatchEvent(new CustomEvent("modalclose"));
-      }
-    });
-
-    this.scrollable = this.querySelector('div.scroll');
-    this.scrollable.addEventListener('wheel', (function(event) {
-    const deltaY = event.deltaY;
-    const contentHeight = this.scrollable.scrollHeight;
-    const visibleHeight = this.scrollable.offsetHeight;
-    const scrollTop = this.scrollable.scrollTop;
-
-    if (scrollTop === 0 && deltaY < 0)
-        event.preventDefault();
-    else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
-        event.preventDefault();
-    }).bind(this))
-  }
-}
+	`;constructor(){super(),this.form=document.createElement("div"),this.form.innerHTML=this.template,this.style.display="none",this.appendChild(this.form),document.addEventListener("modalopen",function(){this.style.display="block"}.bind(this)),document.addEventListener("modalclose",function(){this.style.display="none"}.bind(this)),this.querySelector(".modalClose").addEventListener("click",function(){document.dispatchEvent(new CustomEvent("modalclose"))}),this.querySelector(".modal_window").addEventListener("click",function(e){e.composedPath().includes(this.querySelector(".scroll"))||document.dispatchEvent(new CustomEvent("modalclose"))}),this.scrollable=this.querySelector("div.scroll"),this.scrollable.addEventListener("wheel",function(e){var t=e.deltaY,l=this.scrollable.scrollHeight,i=this.scrollable.offsetHeight,o=this.scrollable.scrollTop;(0===o&&t<0||i+o===l&&0<t)&&e.preventDefault()}.bind(this))}}export{ModalWindow};
