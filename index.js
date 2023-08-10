@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use('/robots.txt', express.static(`${__dirname}/robots.txt`));
+app.use('/Sitemap.txt', express.static(`${__dirname}/Sitemap.txt`));
 app.use('/favicon.ico', express.static(`${__dirname}/frontend/img/favicon/favicon.ico`));
 app.use('/img', express.static(`${__dirname}/frontend/img`));
 app.use('/css', express.static(`${__dirname}/frontend/css`));

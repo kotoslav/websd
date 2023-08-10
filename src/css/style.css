@@ -1950,6 +1950,10 @@ body {
 
 .connection__img {}
 
+.connection__img img:hover{
+    opacity: 0.8;
+}
+
 .connection__title {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 18px;

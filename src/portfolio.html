@@ -1,63 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,500;0,600;0,700;1,200&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link type="image/x-icon" href="./favicon.ico" rel="icon">
-    <title>Web.SD</title>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(94544858, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/94544858" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+@@include('./modules/head.html', {
+"description": "Разработка адаптивных сайтов под ключ в Красноярске без лишних навязанных услуг. Сделаем только что вы сами просите за небольшую цену. Предложим варианты даже для очень скромных бюджетов. ",
+"title": "WEB.SD Разработка  сайтов в Красноярске. Примеры наших работ"
+})
 </head>
 <body>
     <div class="wrapper">
         <header class="header-page">
             <div class="header__top">
                 <div class="header__menu">
-                    <input type="checkbox" id="menu-toggle" hidden>
-                    <nav class="menu">
-                        <label for="menu-toggle" class="menu-toggle" onclick=""></label>
-                        <div class="logo">
-                            <a class="logo__link" href="index"><img class="logo__img" src="./img/logo/logo.png" alt="logo"></a>
-                        </div>
-                        <ul class="menu__list">
-                            <li class="menu__item"><a class="menu__link" href="index">О нас</a></li>
-                            <li class="menu__item"><a class="menu__link" href="portfolio">Наши работы</a></li>
-                            <li class="menu__item"><a class="menu__link" href="prices">Цены</a></li>
-                            <li class="menu__item"><a class="menu__link" href="contacts">Контакты</a></li>
-                        </ul>
-                        <div class="menu__contacts">
-                            <div class="menu__img"><img src="./img/contacts/phone-solid.png" alt="Телефон"></div>
-                            <div class="menu__contact">
-                                <a class="menu__phone" href="tel:89233077166" >+7 (923) 307-71 66</a>
-                                <p class="menu__city">Красноярск</p>
-                            </div>
-                        </div>
-                        <div class="menu__button">
-                            <a class="button button--left" href="/prices">Узнать цену</a>
-                            <a class="button button--left orderCall" href="#!">Заказать сайт</a>
-                        </div>
-                    </nav>
+                    @@include('./modules/menu.html')
                 </div>
                 <div class="contacts">
                     <div class="contacts__img"><img src="./img/contacts/phone-solid.png" alt="Телефон"></div>
@@ -141,44 +95,7 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="container">
-                <div class="footer__block">
-                    <div class="footer__navigation">
-                        <div class="footer__label">Основные разделы</div>
-                        <nav class="footer__menu menu-footer">
-                            <ul class="menu-footer__list">
-                                <li class="menu-footer__item"><a class="menu-footer__link" href="index">О нас</a></li>
-                                <li class="menu-footer__item"><a class="menu-footer__link" href="portfolio">Наши работы</a></li>
-                                <li class="menu-footer__item"><a class="menu-footer__link" href="prices">Цены</a></li>
-                                <li class="menu-footer__item"><a class="menu-footer__link" href="contacts">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="footer__contacts">
-                        <div class="footer__label">Контакты</div>
-                        <div class="footer__email">
-                            <img src="./img/contacts/envelope-regular.png" alt="email">
-                            <a class="footer__footer-email" href="mailto:web.sd@inbox.ru">web.sd@inbox.ru</a>
-                        </div>
-                        <div class="footer__phone-city">
-                            <img src="./img/contacts/phone-solid.png" alt="Телефон">
-                            <a class="footer__phone" href="tel:89233077166" >+7 (923) 307-71 66, Красноярск</a>
-                        </div>
-                        <div class="footer__img">
-                            <a href="viber://chat?number=%2B79233077166" target="_blank"><img src="./img/contacts/Viber.png" alt="Viber"></a>
-                            <a href="https://wa.me/79233077166" target="_blank"><img src="./img/contacts/WhatsApp.png" alt="WhatsApp"></a>
-                            <a href="https://t.me/websdru" target="_blank"><img src="./img/contacts/Telegram.png" alt="Telegram"></a>
-                        </div>
-                        <div class="footer__label">Социальные сети</div>
-                        <div class="footer__img">
-                            <a href="https://vk.com/public221910153" target="_blank"><img src="./img/contacts/VK.png" alt="VK"></a>
-                        </div>
-                    </div>
-                    <div class="author">
-                        <a class="author__link" href="https://www.freepik.com"  target="_blank">designed by Vectorarte - Freepik.com</a>
-                    </div>
-                </div>
-            </div>
+            @@include('./modules/footer.html')
         </footer>
     </div>
     <script type="module" src="./js/script.js"></script>
