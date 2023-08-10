@@ -4,8 +4,10 @@ prefixer = require('gulp-autoprefixer'),
 cssmin     = require('gulp-cssnano'),
 uglify       = require('gulp-uglify'),
 fileinclude = require('gulp-file-include'),
-gcmq = require('gulp-group-css-media-queries');
-let concat = require('gulp-concat');
+gcmq = require('gulp-group-css-media-queries'),
+concat = require('gulp-concat'),
+webp = require('gulp-webp'),
+webphtml = require('gulp-webp-html-nosvg');
 
 gulp.task('html_build', function (done) {
     return gulp.src('src/*.html')
@@ -13,6 +15,7 @@ gulp.task('html_build', function (done) {
 		prefix: '@@',
 		basepath: '@file'
 	}))
+	.pipe(webphtml())
         .pipe(gulp.dest('frontend/'));
     done();
 });
@@ -36,11 +39,17 @@ gulp.task('js_build', function (done) {
 */
 
 gulp.task('fonts_build', function (done) {
-    gulp.src('src/webfonts/*.*')
+    return gulp.src('src/webfonts/*.*')
         .pipe(gulp.dest('frontend/webfonts/'));
     done();
 });
 
+gulp.task('img_compress', function (done) { 
+	return gulp.src('src/img/**/*.*', { soucemaps: true})
+		.pipe(webp())
+		.pipe(gulp.dest('frontend/img/', { soucemaps: true}));
+	done();
+});
+	
 
-
-gulp.task('default', gulp.series('html_build', 'css_build', 'fonts_build'));
+gulp.task('default', gulp.series('html_build', 'css_build', 'fonts_build', 'img_compress'));
