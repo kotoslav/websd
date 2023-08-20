@@ -2,6 +2,7 @@
 import { Calculator } from "./calc.js";
 import { CallbackForm } from "./callbackForm.js";
 import { CallbackFormIndex } from "./callbackFormIndex.js";
+import { CallbackFormIndexInline } from "./callbackFormIndexInline.js";
 import { ModalWindow } from "./modalWindow.js";
 import { animation } from "./animation.js";
 
@@ -36,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     customElements.define('callback-form', CallbackForm);
     customElements.define('callback-formindex', CallbackFormIndex);
+    customElements.define('callback-forminline', CallbackFormIndexInline);
 	document.body.appendChild(document.createElement("modal-window"));
 	customElements.define('modal-window', ModalWindow);
 	const orderCall = document.querySelectorAll('.orderCall');

@@ -24,11 +24,13 @@ if (animItems.length > 0) {
                 }
             }
         };
-        const formAnimation = document.querySelector("#form-animation");
-        if (formAnimation.classList.contains("_active")) {
-            formAnimation.classList.add("animate__animated");
-            formAnimation.classList.add("animate__pulse");
-        }
+        try {
+            const formAnimation = document.querySelector("#form-animation");
+            if (formAnimation.classList.contains("_active")) {
+                formAnimation.classList.add("animate__animated");
+                formAnimation.classList.add("animate__pulse");
+            }
+        } catch(e) {};
     }
     function offset(el) {
         const rect = el.getBoundingClientRect(),

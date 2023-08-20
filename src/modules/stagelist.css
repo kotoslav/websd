@@ -1,0 +1,138 @@
+.stagelist {
+    margin-top: 150px;
+}
+
+.stagelist__title {
+    max-width: 626px;
+}
+
+.stagelist__title::after {
+    content: "";
+    height: 5px;
+    background-color: var(--colorYellowAccent2);
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.left-underline::after {
+    content: "";
+    margin-top: -5px;
+    height: 5px;
+    width: 50%;
+    background-color: var(--colorYellowAccent2);
+    left: 0;
+    display: block;
+    position: absolute;
+}
+
+.stagelist__stages {
+    margin-top: 150px;
+    position: relative;
+}
+
+.stagelist__item {
+    margin-top: 60px;
+}
+
+.stagelist__item-card {
+    background-color: var(--colorYellowAccent2);
+    width: 100%;
+}
+
+.stagelist__item-number {
+    color: #444;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 116px;
+    font-style: normal;
+    font-weight: 900;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 5px;
+}
+
+.stagelist__item-title {
+    height: 100%;
+    padding: 50px 10px 50px 10px;
+    margin-left: 140px;
+    color: #444;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+}
+
+.stagelist__item-annotation {
+    margin-top: 36px;
+    color: #444;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 160%;
+    margin-left: 140px;
+}
+
+@media (max-width: 1100px) {
+    .stagelist__item-title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 940px) {
+    .stagelist {
+        margin-top: 90px;
+    }
+
+    .stagelist__stages {
+        margin-top: 110px;
+    }
+
+    .stagelist__item-annotation {
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .stagelist__item-number {
+        font-size: 100px;
+        margin-top: -50px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .left-underline::after {
+        width: 100%;
+    }
+
+    .stagelist__item-title {
+        margin-left: 0;
+    }
+
+    .stagelist__item-annotation {
+        margin-left: 0;
+        font-size: 18px;
+    }
+
+    .stagelist__item-number {
+        font-size: 90px;
+        margin-top: -45px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .stagelist__item-title {
+        margin-left: 0;
+        font-size: 22px;
+    }
+
+    .stagelist__item-number {
+        font-size: 80px;
+        margin-top: -40px;
+    }
+
+    .stagelist__item-annotation {}
+}

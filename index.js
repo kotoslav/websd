@@ -20,19 +20,19 @@ app.use("/index", (req, res) => {
 })
 
 app.get("/", (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname,'./frontend/index.html'));
+    return res.status(200).sendFile(path.join(__dirname, './frontend/index.html'));
 })
 
 app.get("/portfolio", (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname,'./frontend/portfolio.html'));
+    return res.status(200).sendFile(path.join(__dirname, './frontend/portfolio.html'));
 })
 
 app.get("/contacts", (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname,'./frontend/contacts.html'));
+    return res.status(200).sendFile(path.join(__dirname, './frontend/contacts.html'));
 })
 
 app.get("/prices", (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname,'./frontend/prices.html'));
+    return res.status(200).sendFile(path.join(__dirname, './frontend/prices.html'));
 })
 
 app.use(express.json());
@@ -43,7 +43,7 @@ app.get('/api/callback', (req, res) => {
 })
 */
 
-async function telegram (req) {
+async function telegram(req) {
     let message = [];
     for (key in req.body) {
         message.push(`${key} - ${req.body[key]}\n`);
@@ -51,15 +51,15 @@ async function telegram (req) {
     message = message.join(" ");
     let url = `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=6407769347&text=`
     let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", encodeURI(url+message), true);
+    xhttp.open("GET", encodeURI(url + message), true);
     xhttp.send();
-    }
+}
 
 app.post('/api/callback', async (req, res) => {
     telegram(req);
-    return res.status(200).send({message: "We will call you"});
+    return res.status(200).send({ message: "We will call you" });
 });
 
 
-app.listen(port, '127.0.0.1');
+app.listen(port, '0.0.0.0');
 console.log('Server started at http://localhost:' + port);
