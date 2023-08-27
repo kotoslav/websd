@@ -1918,6 +1918,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 32px;
     font-weight: 600;
+    line-height: 150%;
 }
 
 .portfolio__content {
@@ -1975,7 +1976,6 @@ body {
 /* ---------------Layout-------------------------------------------------------- */
 .layout {
     background-color: var(--colorBeige);
-    padding-bottom: 100px;
 }
 
 .container {}
@@ -2070,6 +2070,7 @@ body {
 @media (max-width: 767px) {
     .portfolio__img {
         height: 400px;
+    	padding-bottom: 100px;
     }
 
     .layout__img {

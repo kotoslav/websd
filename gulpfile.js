@@ -51,7 +51,7 @@ gulp.task('fonts_build', function (done) {
 
 gulp.task('img_compress', function (done) {
     return gulp.src('src/img/**/*.*', { soucemaps: true })
-        .pipe(webp())
+        .pipe(webp({quality: 80}))
         .pipe(gulp.dest('frontend/img/', { soucemaps: true }));
     done();
 });
