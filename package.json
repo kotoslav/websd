@@ -7,12 +7,13 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "gulp": "gulp",
-	"webpack": "webpack"
+    "webpack": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "is-relative": "^1.0.0",
     "nodemon": "^3.0.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
